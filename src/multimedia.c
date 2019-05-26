@@ -121,7 +121,7 @@ void stop_graphics(void) {
 /* Function to be called by graphic thread */
 void *graphic_behaviour() {
   time_g = (time_g + TIME_STEP) % (TIME_MAX);
-  printf("Time: %d\n", time_g);
+  //printf("Time: %d\n", time_g);
 
   update_all_cells();
   draw_all_cells();
@@ -141,7 +141,7 @@ void *keyboard_behaviour(void *arg) {
     val = readkey();
     val = val >> 8;
     if (val == KEY_SPACE) {
-      printf("Early exit from key press\n");
+      printf("Exit from key press\n");
       terminate = true;
     }
     if (val == KEY_RIGHT) {
